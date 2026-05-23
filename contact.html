@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title></title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="navbar">
+
+  <h2 class="logo">👛 Velora Wallets</h2>
+
+  <nav>
+
+    <ul class="nav-links">
+
+      <li><a href="index.html">Home</a></li>
+
+      <li><a href="products.html">Products</a></li>
+
+      <li><a href="about.html">About</a></li>
+
+      <li><a href="blog.html">Blog</a></li>
+
+      <li><a href="contact.html" class="active">Contact</a></li>
+
+    </ul>
+
+  </nav>
+
+  <div class="nav-icons">
+
+    <div class="cart-icon" onclick="showCart()">
+      🛒 <span id="cartCount">0</span>
+    </div>
+
+    <span class="hamburger" onclick="toggleMenu()">☰</span>
+
+  </div>
+
+</div>
+
+</header>
+
+<!-- ================= CART SIDEBAR ================= -->
+
+<div class="cart-sidebar" id="cartSidebar">
+
+  <div class="cart-header">
+
+    <h3>Your Cart 🛒</h3>
+
+    <span onclick="closeCart()" style="cursor:pointer;font-size:22px;">
+      ✕
+    </span>
+
+  </div>
+
+  <div class="cart-items" id="cartItems">
+
+    <p style="color:#aaa;text-align:center;margin-top:40px;">
+      Your cart is empty
+    </p>
+
+  </div>
+
+  <div class="cart-total" id="cartTotal" style="display:none;">
+
+    <strong>
+      Total: Rs. <span id="totalPrice">0</span>
+    </strong>
+
+    <button onclick="checkout()">Checkout</button>
+
+  </div>
+
+</div>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="page-header">
+
+  <h1>Contact Velora</h1>
+
+  <p>Home / Contact</p>
+
+</section>
+
+<!-- ================= CONTACT PAGE ================= -->
+
+<section class="contact-page">
+
+  <div class="contact-container">
+
+    <!-- LEFT SIDE -->
+
+    <div class="contact-info" data-aos="fade-right">
+
+      <h2>Get In Touch</h2>
+
+      <p>
+        We'd love to hear from you. Whether you need help selecting the perfect wallet,
+        tracking an order, or learning more about our premium collections —
+        the Velora team is always here for you.
+      </p>
+
+      <!-- CONTACT DETAILS -->
+
+      <div class="contact-details">
+
+        <div class="contact-item">
+
+          <span>📧</span>
+
+          <div>
+
+            <h4>Email</h4>
+
+            <p>subhanalimohmand.00@gmail.com</p>
+
+          </div>
+
+        </div>
+
+        <div class="contact-item">
+
+          <span>📞</span>
+
+          <div>
+
+            <h4>Phone</h4>
+
+            <p>+923106064210</p>
+
+          </div>
+
+        </div>
+
+        <div class="contact-item">
+
+          <span>📍</span>
+
+          <div>
+
+            <h4>Location</h4>
+
+            <p>Pakistan</p>
+
+          </div>
+
+        </div>
+
+        <div class="contact-item">
+
+          <span>⏰</span>
+
+          <div>
+
+            <h4>Support Hours</h4>
+
+            <p>Mon - Sat : 9AM — 10PM</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- SOCIAL LINKS -->
+
+      <div class="social-links-contact">
+
+        <h4>Follow Us</h4>
+
+        <a href="#">📘 Facebook</a>
+
+        <a href="#">📸 Instagram</a>
+
+        <a href="#">🐦 Twitter</a>
+
+        <a href="#">🎥 TikTok</a>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE FORM -->
+
+    <div class="contact-form" data-aos="fade-left">
+
+      <form onsubmit="sendMessage(event)">
+
+        <label>Full Name</label>
+
+        <input type="text" placeholder="Your full name" required>
+
+        <label>Email Address</label>
+
+        <input type="email" placeholder="Your email address" required>
+
+        <label>Phone Number</label>
+
+        <input type="tel" placeholder="Your phone number">
+
+        <label>Subject</label>
+
+        <input type="text" placeholder="What is this regarding?">
+
+        <label>Your Message</label>
+
+        <textarea placeholder="How can we help you?" rows="6" required></textarea>
+
+        <button type="submit" class="btn btn-primary">
+
+          Send Message →
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FAQ SECTION ================= -->
+
+<section class="faq-section">
+
+  <div class="faq-container">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-grid">
+
+      <div class="faq-card">
+
+        <h3>🚚 How long does delivery take?</h3>
+
+        <p>
+          Orders are usually delivered within 3-5 business days across Pakistan.
+        </p>
+
+      </div>
+
+      <div class="faq-card">
+
+        <h3>💳 What payment methods do you accept?</h3>
+
+        <p>
+          We accept Cash on Delivery, Bank Transfer, and Online Payments.
+        </p>
+
+      </div>
+
+      <div class="faq-card">
+
+        <h3>🔄 Can I exchange my wallet?</h3>
+
+        <p>
+          Yes, exchanges are available within 7 days if the product is unused.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="footer-content">
+
+    <!-- BRAND -->
+
+    <div class="footer-col">
+
+      <h3>👛 Velora</h3>
+
+      <p>
+        Premium wallets crafted for elegance, luxury, and everyday sophistication.
+      </p>
+
+      <div class="social-links">
+
+        <a href="#">📘 Facebook</a>
+
+        <a href="#">📸 Instagram</a>
+
+        <a href="#">🐦 Twitter</a>
+
+      </div>
+
+    </div>
+
+    <!-- QUICK LINKS -->
+
+    <div class="footer-col">
+
+      <h4>Quick Links</h4>
+
+      <ul>
+
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="products.html">Wallets</a></li>
+
+        <li><a href="about.html">About</a></li>
+
+        <li><a href="blog.html">Blog</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+      </ul>
+
+    </div>
+
+    <!-- CONTACT -->
+
+    <div class="footer-col">
+
+      <h4>Contact Us</h4>
+
+      <p>📧 subhanalimohmand.00@gmail.com</p>
+
+      <p>📞 +923106064210</p>
+
+      <p>📍 Pakistan</p>
+
+    </div>
+
+    <!-- NEWSLETTER -->
+
+    <div class="footer-col">
+
+      <h4>Stay Updated</h4>
+
+      <form class="footer-newsletter" onsubmit="subscribe(event)">
+
+        <input type="email" placeholder="Your email" required>
+
+        <button type="submit">→</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+
+  <div class="footer-bottom">
+
+    <p>
+      © 2026 Velora. All rights reserved. | Carry Luxury 👛
+    </p>
+
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products - Velora Wallets</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header>
+
+<div class="navbar">
+
+  <h2 class="logo">👛 Velora Wallets</h2>
+
+  
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="nav-icons">
+    <div class="cart-icon" onclick="showCart()">
+      🛒 <span id="cartCount">0</span>
+    </div>
+
+    <span class="hamburger" onclick="toggleMenu()">☰</span>
+  </div>
+
+</div>
+
+</header>
+
+<!-- CART SIDEBAR -->
+
+<div class="cart-sidebar" id="cartSidebar">
+
+  <div class="cart-header">
+    <h3>Your Cart 🛒</h3>
+
+    <span onclick="closeCart()" style="cursor:pointer;font-size:22px;">
+      ✕
+    </span>
+  </div>
+
+  <div class="cart-items" id="cartItems">
+
+    <p style="color:#aaa;text-align:center;margin-top:40px;">
+      Your cart is empty
+    </p>
+
+  </div>
+
+  <div class="cart-total" id="cartTotal" style="display:none;">
+
+    <strong>
+      Total: Rs. <span id="totalPrice">0</span>
+    </strong>
+
+    <button onclick="checkout()">Checkout</button>
+
+  </div>
+
+</div>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<!-- PAGE HEADER -->
+
+<section class="page-header">
+
+  <h1>Our Wallet Collection</h1>
+
+  <p>Home / Wallets</p>
+
+</section>
+
+<!-- PRODUCTS PAGE -->
+
+<section class="products-page">
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar">
+
+   
+     
+
+    <!-- PRICE RANGE -->
+
+    <h3>Price Range</h3>
+
+    <input type="range"
+    min="0"
+    max="10000"
+    value="10000"
+    step="500"
+    id="priceRange"
+    oninput="filterByPrice(this.value)">
+
+    <p>
+      0 — Rs. <span id="priceValue">10000</span>
+    </p>
+
+    <!-- MATERIAL -->
+
+    <h3>Material</h3>
+
+    <ul class="filter-list">
+
+      <li>
+        <label>
+          <input type="checkbox" onchange="filterMaterial()">
+          Genuine Leather
+        </label>
+      </li>
+
+      <li>
+        <label>
+          <input type="checkbox" onchange="filterMaterial()">
+          Vegan Leather
+        </label>
+      </li>
+
+      <li>
+        <label>
+          <input type="checkbox" onchange="filterMaterial()">
+          Carbon Fiber
+        </label>
+      </li>
+
+      <li>
+        <label>
+          <input type="checkbox" onchange="filterMaterial()">
+          Premium Fabric
+        </label>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <!-- PRODUCTS GRID -->
+
+  <div class="products-grid">
+
+   <div class="products-grid">
+
+  <!-- PRODUCT 1 -->
+  <div class="product-card leather mens">
+    <span class="badge bestseller">BESTSELLER</span>
+
+    <img src="images/blackwallet.jpg" alt="Classic Leather Wallet">
+
+    <h3>Classic Leather Wallet</h3>
+
+    <div class="rating">
+      ★★★★★ <small>(284)</small>
+    </div>
+
+    <p>
+      <span class="sale-price">Rs. 3,499</span>
+      <span class="original-price">Rs. 4,200</span>
+    </p>
+
+    <button>Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 2 -->
+  <div class="product-card luxury mens">
+    <span class="badge premium">PREMIUM</span>
+
+    <img src="images/luxuryleather.jpg" alt="Royal Black Wallet">
+
+    <h3>Royal Black Wallet</h3>
+
+    <div class="rating">
+      ★★★★★ <small>(193)</small>
+    </div>
+
+    <p>
+      <span class="sale-price">Rs. 5,999</span>
+      <span class="original-price">Rs. 7,200</span>
+    </p>
+
+    <button>Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 3 -->
+  <div class="product-card minimal mens">
+    <span class="badge new">NEW</span>
+
+    <img src="images/slimwallet.jpg" alt="Slim Card Holder">
+
+    <h3>Slim Card Holder</h3>
+
+    <div class="rating">
+      ★★★★☆ <small>(145)</small>
+    </div>
+
+    <p>
+      <span class="sale-price">Rs. 2,499</span>
+      <span class="original-price">Rs. 3,000</span>
+    </p>
+
+    <button>Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 4 -->
+  <div class="product-card smart mens">
+    <span class="badge bestseller">HOT</span>
+
+    <img src="images/diamondwallet.jpg" alt="Smart RFID Wallet">
+
+    <h3>Smart RFID Wallet</h3>
+
+    <div class="rating">
+      ★★★★★ <small>(322)</small>
+    </div>
+
+    <p>
+      <span class="sale-price">Rs. 4,999</span>
+      <span class="original-price">Rs. 5,999</span>
+    </p>
+
+    <button>Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 5 -->
+  <div class="product-card womens luxury">
+    <span class="badge premium">LUXURY</span>
+
+    <img src="images/pinkwallet.jpg" alt="Elegant Pink Wallet">
+
+    <h3>Elegant Pink Wallet</h3>
+
+    <div class="rating">
+      ★★★★★ <small>(201)</small>
+    </div>
+
+    <p>
+      <span class="sale-price">Rs. 4,299</span>
+      <span class="original-price">Rs. 5,200</span>
+    </p>
+
+    <button>Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 6 -->
+  <div class="product-card womens minimal">
+    <img src="images/designerwallet.jpg" alt="Mini Fold Wallet">
+
+    <h3>Mini Fold Wallet</h3>
+
+    <div class="rating">
+      ★★★★☆ <small>(124)</small>
+    </div>
+
+    <p>
+      <span class="sale-price">Rs. 2,199</span>
+    </p>
+
+    <button>Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 7 -->
+  <div class="product-card travel mens">
+    <span class="badge bestseller">TRAVEL</span>
+
+    <img src="images/goldwallet.jpg" alt="Travel Organizer Wallet">
+
+    <h3>Travel Organizer Wallet</h3>
+
+    <div class="rating">
+      ★★★★★ <small>(287)</small>
+    </div>
+
+    <p>
+      <span class="sale-price">Rs. 6,499</span>
+    </p>
+
+    <button>Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 8 -->
+  <div class="product-card leather womens">
+    <span class="badge new">POPULAR</span>
+
+    <img src="images/brownwallet.jpg" alt="Luxury Brown Wallet">
+
+    <h3>Luxury Brown Wallet</h3>
+
+    <div class="rating">
+      ★★★★★ <small>(167)</small>
+    </div>
+
+    <p>
+      <span class="sale-price">Rs. 3,899</span>
+      <span class="original-price">Rs. 4,499</span>
+    </p>
+
+    <button>Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 9 -->
+  <div class="product-card smart minimal">
+    <img src="images/womenluxury.jpg" alt="Metal Smart Wallet">
+
+    <h3>Metal Smart Wallet</h3>
+
+    <div class="rating">
+      ★★★★★ <small>(211)</small>
+    </div>
+
+    <p>
+      <span class="sale-price">Rs. 5,499</span>
+    </p>
+
+    <button>Add to Cart</button>
+  </div>
+
+</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-content">
+
+    <div class="footer-col">
+
+      <h3>👛 Velora</h3>
+
+      <p>
+        Premium wallets crafted with luxury materials and timeless elegance.
+      </p>
+
+      <div class="social-links">
+        <a href="#">📘 Facebook</a>
+        <a href="#">📸 Instagram</a>
+        <a href="#">🐦 Twitter</a>
+      </div>
+
+    </div>
+
+    <div class="footer-col">
+
+      <h4>Quick Links</h4>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Wallets</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+    </div>
+
+    <div class="footer-col">
+
+      <h4>Contact Us</h4>
+
+      <p>📧subhanalimohmand.00@gmail.com</p>
+      <p>📞 +923106064210</p>
+
+    </div>
+
+    <div class="footer-col">
+
+      <h4>Stay Updated</h4>
+
+      <form class="footer-newsletter" onsubmit="subscribe(event)">
+
+        <input type="email" placeholder="Your email" required>
+
+        <button type="submit">→</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+
+    <p>
+      © 2026 Velora. All rights reserved. | Carry Luxury 👛
+    </p>
+
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
